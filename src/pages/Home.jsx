@@ -38,34 +38,34 @@ const Home = () => {
           variants={containerVars}
           initial="hidden"
           animate="visible"
-          className="relative z-10 text-center max-w-4xl"
+          className="relative z-10 text-center max-w-4xl w-full px-4"
         >
-          <motion.p variants={itemVars} className="text-emerald-400 uppercase tracking-[0.4em] text-sm mb-6">
+          <motion.p variants={itemVars} className="text-emerald-400 uppercase tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm mb-4 md:mb-6">
             EST. 1998 — TRADITIONAL EXCELLENCE
           </motion.p>
-          <motion.h1 variants={itemVars} className="text-6xl md:text-8xl font-light mb-8 leading-tight">
+          <motion.h1 variants={itemVars} className="text-4xl sm:text-5xl md:text-8xl font-light mb-6 md:mb-8 leading-[1.1] md:leading-tight">
             Nature's Bounty, <br />
             <span className="italic">Elevated.</span>
           </motion.h1>
           <motion.div variants={itemVars}>
             <Link 
               to="/products"
-              className="inline-block px-10 py-4 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-[#0B241C] transition-all duration-500 uppercase tracking-widest text-sm"
+              className="inline-block px-8 md:px-10 py-3 md:py-4 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-[#0B241C] transition-all duration-500 uppercase tracking-widest text-xs md:text-sm"
             >
               Explore Collection
             </Link>
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-10 left-10 flex flex-col gap-4">
-          <div className="w-[1px] h-20 bg-white/20 relative overflow-hidden">
+        <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 flex flex-col gap-3 md:gap-4">
+          <div className="w-[1px] h-12 md:h-20 bg-white/20 relative overflow-hidden">
             <motion.div 
               animate={{ y: [0, 80] }}
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
               className="absolute top-0 left-0 w-full h-1/2 bg-emerald-400"
             />
           </div>
-          <span className="text-[10px] uppercase tracking-widest rotate-90 origin-left mt-4 text-white/40">Scroll</span>
+          <span className="text-[8px] md:text-[10px] uppercase tracking-widest rotate-90 origin-left mt-2 md:mt-4 text-white/40 whitespace-nowrap">Scroll</span>
         </div>
       </section>
 
