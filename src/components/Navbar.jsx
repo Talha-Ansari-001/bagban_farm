@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* Branding - Sharp & Pinned Left */}
         <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 cursor-pointer" onClick={(e) => scrollToSection(e, '#home')}>
           <span className="text-2xl" role="img" aria-label="chicken">🐓</span>
-          <span className="font-bold text-[#0B241C] md:text-white tracking-tight text-lg md:text-xl">Ahmed Farm</span>
+          <span className="font-bold text-[#0B241C] md:text-white tracking-tight text-lg md:text-xl">BAGBAN Farm</span>
         </div>
         
         {/* Navigation - Neatly Spaced & Right Aligned */}

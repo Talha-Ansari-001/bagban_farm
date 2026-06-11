@@ -46,7 +46,7 @@ const Home = () => {
           </motion.h1>
           
           <motion.p variants={itemVars} className="md:hidden text-white text-base mb-8 font-medium max-w-[280px] mx-auto leading-tight">
-            Straight from the fields of Ahmed Farm to your table.
+            Straight from the fields of BAGBAN Farm to your table.
           </motion.p>
 
           <motion.p variants={itemVars} className="hidden md:block text-emerald-400 uppercase tracking-[0.4em] text-sm mb-6">
