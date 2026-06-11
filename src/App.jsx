@@ -31,7 +31,7 @@ const App = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen w-full flex flex-col justify-between items-center pt-32 pb-16 md:pb-24 overflow-hidden">
         {/* Background Image Scenery */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center md:bg-fixed bg-no-repeat transition-transform duration-[2s] scale-105"
@@ -43,7 +43,7 @@ const App = () => {
         <div className="absolute inset-0 z-10 bg-black/20" />
 
         {/* Hero Content */}
-        <div className="relative z-20 text-center px-6 max-w-5xl">
+        <div className="relative z-20 text-center px-6 max-w-5xl flex-grow flex flex-col justify-center items-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,8 +78,8 @@ const App = () => {
           </motion.div>
         </div>
 
-        {/* Floating Highlight Cards (Bento Footer) */}
-        <div className="absolute bottom-0 left-0 right-0 z-30 px-6 pb-10">
+        {/* Floating Highlight Cards (Bento Footer) - Now Relative for natural flow */}
+        <div className="relative z-30 px-6 mt-12 md:mt-20 w-full">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { 

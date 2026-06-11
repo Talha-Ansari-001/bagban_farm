@@ -26,11 +26,11 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-6"
     >
-      <div className="max-w-[1400px] mx-auto backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-between px-10 py-5 shadow-2xl">
+      <div className="max-w-[1400px] mx-auto backdrop-blur-xl bg-white/80 md:bg-white/10 border border-white/20 flex items-center justify-between px-6 md:px-10 py-4 md:py-5 shadow-2xl rounded-2xl md:rounded-none">
         {/* Branding - Sharp & Pinned Left */}
-        <div className="flex items-center gap-3 flex-shrink-0 cursor-pointer" onClick={(e) => scrollToSection(e, '#home')}>
+        <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 cursor-pointer" onClick={(e) => scrollToSection(e, '#home')}>
           <span className="text-2xl" role="img" aria-label="chicken">🐓</span>
-          <span className="font-black text-white tracking-tighter text-xl uppercase">BAGBAN Farm</span>
+          <span className="font-bold text-[#0B241C] md:text-white tracking-tight text-lg md:text-xl">Ahmed Farm</span>
         </div>
         
         {/* Navigation - Neatly Spaced & Right Aligned */}
@@ -47,8 +47,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle (Visual Placeholder for Layout Consistency) */}
-        <div className="md:hidden text-white">
+        {/* Mobile Toggle */}
+        <div className="md:hidden text-[#0B241C]">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </div>
       </div>

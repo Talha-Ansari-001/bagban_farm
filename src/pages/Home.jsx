@@ -19,10 +19,10 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0B241C] text-[#F9F7F2]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden px-6">
+      <section className="relative min-h-screen md:h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-32 pb-20 md:py-0">
         <motion.div 
           initial={{ scale: 1.2, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
+          animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2 }}
           className="absolute inset-0 z-0"
         >
@@ -31,33 +31,66 @@ const Home = () => {
             alt="Farm Landscape" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B241C]/50 via-transparent to-[#0B241C]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#0B241C]/60 md:from-[#0B241C]/50 md:to-[#0B241C]" />
         </motion.div>
 
         <motion.div 
           variants={containerVars}
           initial="hidden"
           animate="visible"
-          className="relative z-10 text-center max-w-4xl w-full px-4"
+          className="relative z-10 text-center max-w-4xl w-full px-4 mb-12 md:mb-0"
         >
-          <motion.p variants={itemVars} className="text-emerald-400 uppercase tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm mb-4 md:mb-6">
+          <motion.h1 variants={itemVars} className="text-[2.5rem] sm:text-5xl md:text-8xl font-black md:font-light mb-4 md:mb-8 leading-[1] md:leading-tight uppercase tracking-tight md:tracking-normal text-white md:text-[#F9F7F2]">
+            <span className="md:hidden">Fresh, Organic,<br />Delivered Daily.</span>
+            <span className="hidden md:inline">Nature's Bounty, <br /><span className="italic">Elevated.</span></span>
+          </motion.h1>
+          
+          <motion.p variants={itemVars} className="md:hidden text-white text-base mb-8 font-medium max-w-[280px] mx-auto leading-tight">
+            Straight from the fields of Ahmed Farm to your table.
+          </motion.p>
+
+          <motion.p variants={itemVars} className="hidden md:block text-emerald-400 uppercase tracking-[0.4em] text-sm mb-6">
             EST. 1998 — TRADITIONAL EXCELLENCE
           </motion.p>
-          <motion.h1 variants={itemVars} className="text-4xl sm:text-5xl md:text-8xl font-light mb-6 md:mb-8 leading-[1.1] md:leading-tight">
-            Nature's Bounty, <br />
-            <span className="italic">Elevated.</span>
-          </motion.h1>
-          <motion.div variants={itemVars}>
+          
+          <motion.div variants={itemVars} className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <Link 
               to="/products"
-              className="inline-block px-8 md:px-10 py-3 md:py-4 border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-[#0B241C] transition-all duration-500 uppercase tracking-widest text-xs md:text-sm"
+              className="w-full md:w-auto px-10 py-4 bg-white md:bg-transparent md:border md:border-emerald-400 text-[#0B241C] md:text-emerald-400 hover:bg-emerald-400 hover:text-[#0B241C] transition-all duration-500 uppercase tracking-widest text-xs md:text-sm font-bold md:font-normal rounded-full md:rounded-none shadow-xl md:shadow-none"
             >
-              Explore Collection
+              Shop Our Products
+            </Link>
+            <Link 
+              to="/about"
+              className="w-full md:w-auto px-10 py-4 bg-[#0B241C]/80 md:hidden text-white uppercase tracking-widest text-xs font-bold rounded-full border border-white/20 backdrop-blur-sm"
+            >
+              Learn Our Story
             </Link>
           </motion.div>
         </motion.div>
 
-        <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 flex flex-col gap-3 md:gap-4">
+        {/* Mobile Feature Cards - Positioned in flow on mobile */}
+        <div className="md:hidden relative z-10 w-full px-4 grid grid-cols-3 gap-2 mt-8">
+          {['100% Organic', 'Fresh Daily', 'Local Delivery'].map((feature, i) => (
+            <motion.div
+              key={feature}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + (i * 0.1) }}
+              className="bg-white/90 backdrop-blur-md py-4 px-1 rounded-xl text-center shadow-lg border border-white/40"
+            >
+              <p className="text-[10px] font-bold text-[#0B241C] leading-tight uppercase tracking-tighter">
+                {feature.split(' ').map((word, idx) => (
+                  <React.Fragment key={idx}>
+                    {word}<br />
+                  </React.Fragment>
+                ))}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="hidden md:flex absolute bottom-6 md:bottom-10 left-6 md:left-10 flex-col gap-3 md:gap-4">
           <div className="w-[1px] h-12 md:h-20 bg-white/20 relative overflow-hidden">
             <motion.div 
               animate={{ y: [0, 80] }}
